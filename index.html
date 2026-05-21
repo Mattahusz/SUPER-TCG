@@ -5,6 +5,142 @@
 
 <style>
 
+ body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#0a0a0a;
+}
+
+/* CARTA BASE */
+
+.card{
+  position:relative;
+  width:260px;
+  border-radius:22px;
+  overflow:hidden;
+  transition:0.4s;
+  transform-style:preserve-3d;
+}
+
+/* IMAGEM */
+
+.card img{
+  width:100%;
+  display:block;
+  border-radius:22px;
+}
+
+/* 🔴🔥 BORDA ROSA/VEMELHA */
+
+.fire{
+  box-shadow:
+    0 0 15px #ff0033,
+    0 0 35px #ff3399,
+    0 0 60px #ff0044;
+
+  animation:pulseFire 2s infinite;
+}
+
+/* 🔥 AURA DE FOGO (LABAREDAS SIMULADAS) */
+
+.fire::before{
+  content:"";
+  position:absolute;
+  inset:-20px;
+
+  background:
+    radial-gradient(circle at 30% 70%, rgba(255,0,100,0.6), transparent 60%),
+    radial-gradient(circle at 70% 30%, rgba(255,80,120,0.5), transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(255,0,0,0.4), transparent 70%);
+
+  filter:blur(20px);
+
+  z-index:-1;
+
+  animation:fireAura 1.5s infinite alternate;
+}
+
+/* 🔴 ENERGIA GIRANDO VERTICAL */
+
+.energy{
+  position:absolute;
+  top:-30%;
+  left:50%;
+
+  width:6px;
+  height:160%;
+
+  background:linear-gradient(to bottom, #ff0033, #ff66aa, transparent);
+
+  transform:translateX(-50%);
+
+  animation:spinEnergy 1.2s linear infinite;
+
+  filter:blur(2px);
+}
+
+/* HOVER 3D */
+
+.card:hover{
+  transform:
+    rotateY(15deg)
+    rotateX(8deg)
+    scale(1.05);
+}
+
+/* 🔥 PULSAÇÃO */
+
+@keyframes pulseFire{
+
+  0%{
+    box-shadow:
+      0 0 10px #ff0033,
+      0 0 25px #ff3399;
+  }
+
+  50%{
+    box-shadow:
+      0 0 25px #ff0066,
+      0 0 60px #ff3399;
+  }
+
+  100%{
+    box-shadow:
+      0 0 10px #ff0033,
+      0 0 25px #ff3399;
+  }
+
+}
+
+/* 🔥 AURA FOGO */
+
+@keyframes fireAura{
+  0%{
+    transform:scale(1);
+    opacity:0.6;
+  }
+
+  100%{
+    transform:scale(1.1);
+    opacity:1;
+  }
+}
+
+/* 🔄 ENERGIA GIRANDO */
+
+@keyframes spinEnergy{
+  from{
+    transform:translateX(-50%) rotate(0deg);
+  }
+
+  to{
+    transform:translateX(-50%) rotate(360deg);
+  }
+}
+
  .card{
   box-shadow:
     0 10px 20px rgba(0,0,0,0.6),
@@ -416,6 +552,14 @@ body{
 </head>
 
 <body>
+
+ <div class="card fire">
+
+  <img src="itoshi_webp">
+
+  <div class="energy"></div>
+
+ </div>
 
 <img
  class="card"
