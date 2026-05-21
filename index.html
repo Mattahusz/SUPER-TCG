@@ -73,3 +73,209 @@ body{
 </body>
 
 </html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<title>Carta Elétrica</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle, #111, #000);
+
+    overflow:hidden;
+}
+
+/* PARTÍCULAS DE FUNDO */
+
+body::before{
+    content:'';
+
+    position:absolute;
+    width:200%;
+    height:200%;
+
+    background:
+    repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 50px,
+        rgba(0,150,255,0.03) 52px
+    );
+
+    animation:fundo 10s linear infinite;
+}
+
+@keyframes fundo{
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(100px);
+    }
+}
+
+/* CARTA */
+
+.card{
+
+    position:relative;
+
+    width:260px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:0.5s;
+
+    animation:pulse 2s infinite;
+
+}
+
+/* IMAGEM */
+
+.card img{
+    width:100%;
+    display:block;
+    border-radius:20px;
+}
+
+/* AURA METÁLICA */
+
+.card::before{
+
+    content:'';
+
+    position:absolute;
+    inset:-4px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        45deg,
+        #00c3ff,
+        #005eff,
+        #7df9ff,
+        #002fff
+    );
+
+    background-size:400%;
+
+    z-index:-1;
+
+    filter:blur(15px);
+
+    animation:energia 4s linear infinite;
+}
+
+/* REFLEXO METÁLICO */
+
+.card::after{
+
+    content:'';
+
+    position:absolute;
+
+    top:-50%;
+    left:-60%;
+
+    width:50%;
+    height:200%;
+
+    background:
+    rgba(255,255,255,0.25);
+
+    transform:rotate(25deg);
+
+    animation:shine 3s infinite;
+}
+
+/* HOVER */
+
+.card:hover{
+
+    transform:
+      rotateY(15deg)
+      rotateX(8deg)
+      scale(1.05);
+
+}
+
+/* ANIMAÇÕES */
+
+@keyframes energia{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    100%{
+        background-position:400% 50%;
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:
+          0 0 20px #00c3ff,
+          0 0 40px #005eff;
+    }
+
+    50%{
+        box-shadow:
+          0 0 40px #7df9ff,
+          0 0 80px #005eff;
+    }
+
+    100%{
+        box-shadow:
+          0 0 20px #00c3ff,
+          0 0 40px #005eff;
+    }
+
+}
+
+@keyframes shine{
+
+    from{
+        left:-60%;
+    }
+
+    to{
+        left:130%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="seishiro_nagi.webp">
+
+</div>
+
+</body>
+
+</html>
