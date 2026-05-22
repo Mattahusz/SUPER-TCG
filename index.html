@@ -33,7 +33,7 @@
    
  .fire{
 
-  box-shadow:0 0 20px red;
+  box-shadow:0 0 50px red;
    
    }
 
@@ -56,7 +56,7 @@
 
   transform:rotate(25deg);
 
-  animation:metalShine 3s infinite;
+  animation:metalShine 1.5s infinite;
 
 }
 
@@ -71,6 +71,66 @@
   }
 
   }
+   /* PARTÍCULAS */
+
+.particles{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.5) 1px,
+      transparent 2px
+    );
+
+  background-size:30px 30px;
+
+  opacity:0.25;
+
+  animation:particlesMove 6s linear infinite;
+
+  pointer-events:none;
+  }
+   /* AURA SUAVE */
+
+.electric::before{
+
+  content:'';
+
+  position:absolute;
+
+  inset:-8px;
+
+  border-radius:25px;
+
+  z-index:-1;
+
+  background:
+  linear-gradient(
+    45deg,
+    rgba(0,195,255,0.25),
+    rgba(0,68,255,0.15),
+    rgba(125,249,255,0.20)
+  );
+
+  filter:blur(12px);
+
+  animation:electricAura 5s linear infinite;
+}
+   @keyframes particlesMove{
+
+  from{
+    transform:translateY(0);
+  }
+
+  to{
+    transform:translateY(-25px);
+  }
+
+   }
     
 </style>
   
@@ -78,7 +138,7 @@
 
 <body>
   <!--CARTAS-->
-<div class="card eletric">
+<div class="card fire">
   
   <img src="michel.webp">
   
