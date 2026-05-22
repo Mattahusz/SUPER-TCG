@@ -10,6 +10,105 @@
      background:black;
    }
   /*EFEITOS*/   
+   /* CARTA PRIME */
+
+.prime{
+
+  position:relative;
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 0 12px rgba(255,215,0,0.6),
+    0 0 30px rgba(255,230,120,0.4);
+
+}
+
+/* BORDA DIAMANTE */
+
+.prime::before{
+
+  content:'';
+
+  position:absolute;
+
+  inset:-3px;
+
+  border-radius:24px;
+
+  z-index:-1;
+
+  background:
+    linear-gradient(
+      45deg,
+      #fff8cc,
+      #ffd700,
+      #fff4a3,
+      #ffec8b,
+      #ffffff,
+      #ffd700
+    );
+
+  background-size:400%;
+
+  filter:blur(3px);
+
+  animation:diamondBorder 6s linear infinite;
+}
+
+   /* REFLEXO */
+
+.prime::after{
+
+  content:'';
+
+  position:absolute;
+
+  top:-50%;
+  left:-80%;
+
+  width:35%;
+  height:220%;
+
+  background:
+    rgba(255,255,255,0.35);
+
+  transform:rotate(25deg);
+
+  filter:blur(4px);
+
+  animation:goldShine 3s infinite;
+  }
+
+   @keyframes goldShine{
+
+  from{
+    left:-80%;
+  }
+
+  to{
+    left:160%;
+  }
+
+}
+
+/* BORDA */
+
+@keyframes diamondBorder{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  100%{
+    background-position:400% 50%;
+  }
+
+}
+
+   
 .card{
 
   width:260px;
@@ -105,6 +204,13 @@
 
 <body>
   <!--CARTAS-->
+
+  <div class="card prime">
+
+   <img src="">
+
+  </div>
+  
 <div class="card fire">
   
   <img src="michel.webp">
