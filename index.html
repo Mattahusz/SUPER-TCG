@@ -13,6 +13,56 @@
 
    }
   /*EFEITOS*/   
+   /* SHINE DE VIDRO */
+
+.card::after{
+
+  content:'';
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:22px;
+
+  background:
+
+  linear-gradient(
+
+    120deg,
+
+    rgba(255,255,255,0.00) 20%,
+
+    rgba(255,255,255,0.10) 40%,
+
+    rgba(255,255,255,0.35) 50%,
+
+    rgba(255,255,255,0.08) 60%,
+
+    rgba(255,255,255,0.00) 80%
+
+  );
+
+  mix-blend-mode:screen;
+
+  animation:glassShine 4s linear infinite;
+
+  pointer-events:none;
+}
+
+   @keyframes glassShine{
+
+  from{
+    transform:translateX(-120%);
+  }
+
+  to{
+    transform:translateX(120%);
+  }
+
+}
+
+   
 .prime{
 
   box-shadow:
