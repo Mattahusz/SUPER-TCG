@@ -5,7 +5,77 @@
 
  <style>
    /*CSS*/
+/*RARIDADES*/
 
+   /* LEGENDARY */
+
+.legendary{
+
+  border:3px solid rgba(255,80,0,0.95);
+
+  box-shadow:
+
+    0 0 8px rgba(255,0,0,1),
+
+    0 0 20px rgba(255,60,0,0.95),
+
+    0 0 40px rgba(255,120,0,0.8),
+
+    0 0 70px rgba(255,140,0,0.5);
+
+}
+   .legendary::before{
+
+  content:'';
+
+  position:absolute;
+
+  inset:-3px;
+
+  border-radius:24px;
+
+  z-index:-1;
+
+  background:
+
+  linear-gradient(
+
+    45deg,
+
+    #ff0000,
+
+    #ff2200,
+
+    #ff5500,
+
+    #ff8800,
+
+    #ff3300,
+
+    #ff0000
+
+  );
+
+  background-size:400%;
+
+  animation:legendaryBorder 5s linear infinite;
+
+  filter:blur(4px);
+   }
+
+   @keyframes legendaryBorder{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  100%{
+    background-position:400% 50%;
+  }
+
+                  }
+
+    
    body{
      background:black;
 
@@ -281,14 +351,14 @@ background: rgba(255,255,255,1);
 <body>
   <!--CARTAS-->
 
-  <div class="card prime epic">
+  <div class="card prime legendary">
 
    <img src="bachira.webp">
     
    
   </div>
 
-  <div class="card prime epic">
+  <div class="card prime legendary">
 
     <img src="bachira_prime.webp">
     
