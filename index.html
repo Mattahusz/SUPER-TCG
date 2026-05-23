@@ -57,102 +57,7 @@
 }
      
    }
-  /*EFEITOS*/   
-   /* SHINE DE VIDRO */
-
-.card::after{
-
-  content:'';
-
-  position:relative;
-  overflow:hidden;
-  
-  inset:0;
-
-  border-radius:8px;
-
-  background:
-
-  linear-gradient(
-
-    120deg,
-
-     0 0 10px rgba(255,255,255,0.9),
-
-  0 0 25px rgba(210,180,255,0.8),
-
-  0 0 45px rgba(140,0,255,0.7),
-
-  0 0 70px rgba(70,0,255,0.6),
-
-  0 0 100px rgba(0,120,255,0.45);
-  );
-
-  mix-blend-mode:screen;
-
-  animation:glassShine 4s linear infinite;
-
-  pointer-events:none;
-}
-
-   @keyframes glassShine{
-
-  from{
-    transform:translateX(-120%);
-  }
-
-  to{
-    transform:translateX(120%);
-  }
-
-}
-
-   
-.prime{
-
-box-shadow:
-
-  0 0 10px rgba(255,255,255,0.9),
-
-  0 0 25px rgba(210,180,255,0.8),
-
-  0 0 45px rgba(140,0,255,0.7),
-
-  0 0 70px rgba(70,0,255,0.6),
-
-  0 0 100px rgba(0,120,255,0.45);
-
-  background:
-linear-gradient(
-
-  45deg,
-
-  #ffffff,
-
-  #d7b3ff,
-
-  #8a00ff,
-
-  #3f00ff,
-
-  #0080ff
-
-);
-
-  animation:primePulse 4s infinite alternate;
-
-  @keyframes primePulse{
-
-  from{
-    filter:brightness(1);
-  }
-
-  to{
-    filter:brightness(1.25);
-  }
-
-  
-}
+  /*EFEITOS*/
 
    /*BORDAS PRIME*/
    .prime::before{
@@ -330,9 +235,9 @@ background: rgba(255,255,255,1);
 }
    
 }
-   .electric{
+   .epic{
 
-  box-shadow:0 0 20px  purple;
+  box-shadow:0 0 80px  purple;
 
    }
    
@@ -341,31 +246,7 @@ background: rgba(255,255,255,1);
   box-shadow:0 0 80px red;
    
    }
-   
-   /* PARTÍCULAS */
-
-.particles{
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(255,255,255,0.5) 1px,
-      transparent 2px
-    );
-
-  background-size:30px 30px;
-
-  opacity:0.8;
-
-  animation:particlesMove 6s linear infinite;
-
-  pointer-events:none;
-  }
-   
+  
    /* AURA SUAVE */
 
 .prime::before{
@@ -392,18 +273,7 @@ background: rgba(255,255,255,1);
 
   animation:primeAura 5s linear infinite;
 }
-   @keyframes particlesMove{
-
-  from{
-    transform:translateY(0);
-  }
-
-  to{
-    transform:translateY(-25px);
-  }
-
-   }
-    
+   
 </style>
   
 </head>
@@ -411,14 +281,14 @@ background: rgba(255,255,255,1);
 <body>
   <!--CARTAS-->
 
-  <div class="card prime">
+  <div class="card prime epic">
 
    <img src="bachira.webp">
     
    
   </div>
 
-  <div class="card prime">
+  <div class="card prime epic">
 
     <img src="bachira_prime.webp">
     
@@ -428,9 +298,6 @@ background: rgba(255,255,255,1);
   <div class="card pro">
 
     <img src="bachira_gold.webp">
-    
-     <div class="particles"></div>
-
 
   </div>
   
